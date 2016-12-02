@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="js/jquery.js"></script>
+    <script src="js/swiper.animate1.0.2.min.js"></script>
+    <script src="js/swiper.jquery.js"></script>
+    <script src="js/index.js"></script>
+    <link rel="stylesheet" href="css/animate.min.css">
+    <link rel="stylesheet" href="css/swiper.min.css">
+    <link rel="stylesheet" href="css/index.css">
+</head>
+<script>
+    function move(obj,type){
+        var type=type||"x";
+        if(type=="x"){
+            var ws=document.documentElement.clientWidth;
+            var scale=ws/obj*100;
+            document.getElementsByTagName("html")[0].style.fontSize=scale+"px";
+        }else if(type=="y"){
+            var hs=document.documentElement.clientHeight;
+            var scale=hs/obj*100;
+            document.getElementsByTagName("html")[0].style.fontSize=scale+"px";
+        }
+    }
+    window.onload=function () {
+        var mySwiper= new Swiper (".swiper-container",{
+            onInit: function(swiper){
+                swiperAnimateCache(swiper);
+                swiperAnimate(swiper);
+            },
+            onSlideChangeEnd: function(swiper){
+                swiperAnimate(swiper);
+            }
+        });
+        move(750);
+
+    }
+</script>
+<body>
+<div class="swiper-container">
+    <div class="swiper-wrapper">
+        <div class="swiper-slide">
+            <div class="word">
+                <span class="goh ani" swiper-animate-effect="flip" swiper-animate-duration="0.5s" swiper-animate-delay="0.3s">GO HIKING</span>
+                <span class="qu ani" swiper-animate-effect="fadeInRight" swiper-animate-duration="0.5s" swiper-animate-delay="0.3s">去远方</span>
+            </div>
+            <div class="tu ani" swiper-animate-effect="bounceInLeft" swiper-animate-duration="0.5s" swiper-animate-delay="0.3s">
+                <div class="tu1"></div>
+                <div class="tu2"></div>
+                <div class="tu3"></div>
+                <div class="tu4"></div>
+                <div class="tu5"></div>
+            </div>
+        </div>
+        <div class="swiper-slide">
+            <div class="word">
+                <span class="goh ani" swiper-animate-effect="flipInX" swiper-animate-duration="0.5s" swiper-animate-delay="0.3s">GO TRIP</span>
+                <span class="qu ani" swiper-animate-effect="rotateIn" swiper-animate-duration="0.5s" swiper-animate-delay="0.3s">去旅行</span>
+            </div>
+            <div class="tu">
+                <div class="tu6"></div>
+                <div class="tu7 ani" swiper-animate-effect="flipInX" swiper-animate-duration="0.5s" swiper-animate-delay="0.3s"></div>
+                <div class="tu8 ani" swiper-animate-effect="flipInX" swiper-animate-duration="0.5s" swiper-animate-delay="0.3s"></div>
+                <div class="tu9 ani" swiper-animate-effect="flipInX" swiper-animate-duration="0.5s" swiper-animate-delay="0.3s"></div>
+            </div>
+
+        </div>
+        <div class="swiper-slide">
+            <div class="word">
+                <div class="goh ani" swiper-animate-effect="rollIn" swiper-animate-duration="0.5s" swiper-animate-delay="0.3s">TAKE EXERCISE</div>
+                <div class="qu ani" swiper-animate-effect="zoomIn" swiper-animate-duration="0.5s" swiper-animate-delay="0.3s">去运动</div>
+            </div>
+            <div class="tu">
+                <div class="tu10"></div>
+                <div class="tu11 ani" swiper-animate-effect="fadeInLeft" swiper-animate-duration="2s" swiper-animate-delay="0.3s"></div>
+            </div>
+        </div>
+    </div>
+    <div class="swiper-pagination"></div>
+</div>
+</body>
+</html>
